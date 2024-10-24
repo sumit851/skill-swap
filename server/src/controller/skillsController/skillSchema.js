@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import User from "../userController/userSchema";
+// import User from "../userController/userSchema.js";
 
 const Schema = mongoose.Schema;
 
@@ -13,8 +13,8 @@ const skillSchema = new Schema({
     required: true,
   },
   user_id: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: User,
+    type: String,
+    required: true,
   },
   created_at: {
     type: Date,
@@ -32,12 +32,11 @@ const preferredSkills = new Schema(
       type: [
         {
           title: {
-            type: [String],
+            type: String,
             required: true,
           },
           user_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: User,
+            type: String,
             required: true,
           },
         },
